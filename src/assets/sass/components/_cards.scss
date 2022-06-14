@@ -1,0 +1,25 @@
+.card {
+  width: 270px;
+  height: 435px;
+  @include column-center;
+  gap: 30px;
+  padding-bottom: 30px;
+  background-color: $color-light-s;
+  border-radius: 9px;
+  overflow: hidden;
+  @extend %transition;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+
+    & .button.button_bordered {
+      background-color: $color-primary;
+      border: none;
+    }
+  }
+
+  &__title {
+    @include font-title(20px, 23px, 0.06em, $color-dark-l);
+  }
+}

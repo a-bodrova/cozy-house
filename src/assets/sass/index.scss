@@ -1,0 +1,19 @@
+@import './helpers/fonts';
+@import './helpers/constants';
+@import './helpers/mixins';
+@import './helpers/placeholders';
+
+@import './base/normalize';
+@import './base/base';
+
+@import './components/header';
+@import './components/buttons';
+@import './components/cards';
+@import './components/footer';
+@import './components/pagination';
+@import './components/hamburger';
+@import './components/burger-menu';
+@import './components/popap';
+
+@import '../../pages/main/main';
+@import '../../pages/pets/pets';

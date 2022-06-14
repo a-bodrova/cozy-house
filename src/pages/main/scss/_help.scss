@@ -1,0 +1,78 @@
+.help {
+
+  & .wrapper {
+    @include column-center;
+    gap: 60px;
+
+    @include media-mobile {
+      gap: 42px;
+    }
+  }
+
+  & .title {
+    
+    @include media-tablet {
+      max-width: 308px;
+    }
+  }
+
+  &__icons {
+    @include row-between($justify: center);
+    flex-wrap: wrap;
+    gap: 55px 120px;
+
+    @include media-tablet {
+      gap: 55px 60px;
+    }
+
+    @include media-mobile {
+      padding: 0 5px;
+      gap: 30px;
+    }
+
+    @media (max-width: 350px) {
+      justify-content: flex-start;
+    }
+
+    .icon {
+      @include column-center;
+      gap: 30px;
+
+      &__image {
+        @include sizes(60px);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+
+        @each $class, $path in $help-icons {
+
+          &.#{$class} {
+            background-image: url(#{$path});
+          }
+        }
+
+        @include media-mobile {
+          @include sizes(50px);
+        }
+      }
+
+      &__title {
+        @include font-title(20px, 23px, 1px, $color-dark-l);
+
+        @include media-mobile {
+          font-size: 15px;
+          line-height: 16.5px;
+        }
+      }
+
+      @include media-tablet {
+        width: 170px;
+      }
+
+      @include media-mobile {
+        width: 130px;
+        gap: 20px;
+      }
+    }
+  }
+}

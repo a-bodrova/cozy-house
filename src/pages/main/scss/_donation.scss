@@ -1,0 +1,122 @@
+@use '../../../assets/sass/helpers/constants';
+
+.donation {
+  background-color: $color-light-l;
+  
+  .wrapper {
+    @include row-between($justify: center);
+    gap: 30px;
+    padding: 80px 40px 100px 40px;
+
+    @include media-tablet {
+      flex-direction: column-reverse;
+      gap: 60px;
+      padding: 80px 30px 100px 30px;
+    }
+
+    @include media-mobile {
+      padding: 42px 10px;
+      gap: 42px;
+    }
+  }
+
+  &__puppy {
+    @include sizes(505px, 261px);
+    background-image: url('../../assets/images/donation-dog.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include media-mobile {
+      @include sizes(260px, 135px);
+    }
+  }
+
+  &__content {
+    max-width: 380px;
+    @include row-between($direction: column, $justify: flex-start, $align-items: flex-start);
+    gap: 20px;
+
+    .title {
+      text-align: left;
+
+      @include media-tablet {
+        max-width: 300px;
+      }
+
+      @include media-mobile {
+        text-align: center;
+      }
+    }
+
+    @include media-tablet {
+      justify-content: center;
+    }
+
+    @include media-mobile {
+      align-items: center;
+    }
+  }
+
+  &__description {
+    @include font-title(15px, 17px, 0.9px, $color-dark-l);
+
+    @include media-mobile {
+      line-height: 24px;
+      letter-spacing: 0;
+    }
+  }
+
+  &__cardnumber {
+    position: relative;
+    @include sizes(349px, 43px);
+    background-color: $color-primary;
+    border-radius: 9px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-light;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      width: 30px;
+      height: 23px;
+      background-image: url('../../assets/icons/credit-card.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &::after {
+      content: '8380 2880 8028 8791 7435';
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      @include font-title(20px, 23px, 1.2px, $color-dark-l);
+
+      @include media-mobile {
+        top: 14px;
+        font-size: 15px;
+        line-height: 17px;
+        letter-spacing: 0.06em;
+      }
+    }
+
+    @include media-mobile {
+      @include sizes(281px, 43px);
+    }
+  }
+
+  &__disclaimer {
+    max-width: 380px;
+    @include font-text(12px, 18px, null, $color-dark-m);
+    font-style: italic;
+
+    @include media-mobile {
+      max-width: 280px;
+      text-align: justify;
+    }
+  }
+}

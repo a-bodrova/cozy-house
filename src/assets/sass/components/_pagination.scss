@@ -1,0 +1,4 @@
+.pagination__container {
+  @include row-between($justify: center);
+  gap: 20px;
+}

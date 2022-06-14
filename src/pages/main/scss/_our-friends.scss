@@ -1,0 +1,138 @@
+@keyframes scalopacity {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  };
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.our-friends {
+  background-color: $color-light-l;
+
+  &__wrapper.wrapper {
+    max-width: 1280px;
+    @include column-center;
+    gap: 60px;
+    padding: 80px 40px 100px;
+
+    @include media-tablet {
+      padding: 80px 30px 100px;
+    }
+
+    @include media-mobile {
+      padding: 42px 10px;
+      gap: 42px;
+    }
+  }
+
+  &.pets__friends {
+
+    & .wrapper {
+      gap: 45px;
+
+      .cards__container {
+        position: static;
+        width: 100%;
+        padding: 15px 0;
+        gap: 30px 40px;
+
+        &.active {
+          animation: scalopacity 0.4s ease 0 1 normal none running; // none 0 ease 0 1 normal none running
+        }
+
+        @include media-tablet {
+          padding: 30px 0 40px 0;
+        }
+
+        @include media-mobile {
+          margin: 0 auto;
+          padding: 0;
+        }
+      }
+
+      @include media-tablet {
+        gap: 0;
+        padding: 80px 40px 76px;
+      }
+
+      @include media-mobile {
+        padding: 42px 10px;
+        gap: 42px;
+      }
+
+      .pagination__container {
+        @include media-mobile {
+          order: 3;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+.cards {
+  width: 100%;
+  @include row-between;
+
+  &__outer-wrapper {
+    width: 990px;
+    height: 435px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+
+    @include media-laptop {
+      width: 580px;
+    }
+
+    @include media-mobile {
+      width: 270px;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 990px;
+    @include row-between($justify: center);
+    gap: 8.1%;
+    flex-wrap: wrap;
+    @extend %transition-long;
+
+    @include media-tablet {
+      width: 580px;
+      gap: 40px;
+    }
+
+    @include media-mobile {
+      width: 270px;
+      order: 1;
+    }
+  }
+
+  @include media-mobile {
+    width: 270px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  & > .circle_left {
+
+    @include media-mobile {
+      order: 2;
+    }
+  }
+
+  & > .circle_right {
+
+    @include media-mobile {
+      order: 3;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+// colors
+$color-dark-s: #CDCDCD;
+$color-dark-m: #B2B2B2;
+$color-dark-l: #545454;
+$color-dark-xl: #4C4C4C;
+$color-dark-3xl: #292929;
+
+$color-modal-dark: #000000;
+$color-modal-overlay: rgba(41, 41, 41, 0.6);
+
+$color-primary: #F1CDB3;
+$color-primary-light: #FDDCC4;
+
+$color-light-s: #FAFAFA;
+$color-light-l: #F6F6F6;
+$color-light-xl: #FFFFFF;
+
+// widths
+$width: (
+  content: 1280px,
+  laptop: 1024px,
+  tablet: 767px,
+  mobile: 320px,
+);
+
+// paths to help icons
+
+$help-icons: (
+  food: '../icons/food-icon.svg',
+  bowls: '../icons/bowls-and-cups-icon.svg',
+  colars: '../icons/colars-icon.svg',
+  medicines: '../icons/medicines-icon.svg',
+  shampoos: '../icons/shampoos-icon.svg',
+  sleeping: '../icons/sleeping-area-icon.svg',
+  toys: '../icons/toys-icon.svg',
+  transportation: '../icons/transportation-icon.svg',
+  vitamins: '../icons/vitamins-icon.svg',
+);

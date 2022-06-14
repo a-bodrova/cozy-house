@@ -1,0 +1,63 @@
+.header {
+  width: 100%;
+  margin: 0 auto;
+  @include row-between;
+
+  &__logo {
+    @extend %transition-long;
+    cursor: pointer;
+  }
+
+  &__nav {
+
+    @include media-mobile {
+      display: none;
+    }
+  }
+
+  & .hamburger {
+    margin-right: 43px;
+  }
+}
+
+.logo {
+
+  &__title {
+    @include font-title(32px, 35px, 1.8px, $color-primary);
+    text-align: center;
+  }
+
+  &__subtitle {
+    padding-top: 10px;
+    @include font-text(13px, 15px, 1.3px, $color-light-xl);
+    text-align: center;
+  }
+}
+
+.list {
+  @include row-between;
+  gap: 35px;
+
+  &__item {
+  @include font-text(15px, 24px, 0.1px, $color-dark-s);
+
+    &:hover a {
+      color: $color-light-s;
+    }
+
+    &.active {
+      position: relative;
+      color: $color-light-s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 21px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $color-primary;
+      }
+    }
+  }
+}

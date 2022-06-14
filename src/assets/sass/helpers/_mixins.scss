@@ -1,0 +1,64 @@
+@mixin sizes($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin columns ($width, $justify: space-between) {
+  display: flex;
+  justify-content: $justify;
+  >* {
+      flex-basis: $width;
+  }
+}
+
+@mixin row-between($direction: row, $justify: space-between, $align-items: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align-items;
+}
+
+@mixin column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin font-title($size, $line, $spacing, $color) {
+  font-family: Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $size;
+  line-height: $line;
+  letter-spacing: $spacing;
+  color: $color;
+}
+
+@mixin font-text($size, $line, $spacing, $color) {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: $size;
+  line-height: $line;
+  letter-spacing: $spacing;
+  color: $color;
+}
+
+@mixin media-laptop {
+  @media (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin media-tablet {
+  @media (max-width: map-get($width, laptop)) {
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  @media (max-width: map-get($width, tablet)) {
+    @content;
+  }
+}

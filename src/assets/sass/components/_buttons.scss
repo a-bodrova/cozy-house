@@ -1,0 +1,88 @@
+.button {
+  @include font-title(17px, 22px, 1px, $color-dark-3xl);
+  padding: 15px 45px;
+  background-color: transparent;
+  border-radius: 100px;
+  @extend %transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+
+  &_colored {
+    background-color: $color-primary;
+
+    &:hover {
+      background-color: $color-primary-light;
+    }
+  }
+
+  &_bordered {
+    padding: 13px 43px;
+    border: 2px solid $color-primary-light;
+
+    &:hover {
+      background-color: $color-primary-light;
+      border: none;
+    }
+
+    &:active {
+      background-color: $color-primary;
+      border: none;
+    }
+  }
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include sizes(52px);
+  padding: 23px 19px;
+  @include font-text(20px, 23px, 0.06em, null);
+  border-radius: 100px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 14px 6px;
+  background-position: center center;
+  @extend %transition;
+  cursor: pointer;
+
+  &_left {
+    background-image: url('../icons/Arrow-left.svg');
+  }
+
+  &_right {
+    background-image: url('../icons/Arrow-right.svg');
+  }
+
+  &_bordered {
+    border: 2px solid $color-primary;
+
+    &:hover {
+      background-color: $color-primary-light;
+      border: none;
+    }
+  
+    &:active {
+      background-color: $color-primary;
+      border: none;
+    }
+  
+    &:disabled {
+      border: 2px solid $color-dark-s;
+      cursor: auto;
+
+      &:hover {
+      background-color: transparent;
+      }
+    }
+  }
+
+  &_colored {
+    background-color: $color-primary;
+    border: none;
+    cursor: auto;
+  }
+}
